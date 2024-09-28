@@ -61,7 +61,7 @@ vector<double> a;
 bool good(double x){
     int s=0;
     for(int i=0;i<n;i++){
-        s+=floor(a[i]/x);
+        s+=floor(a[i]/x);     //both a[i] and x should be double  in order for the floor function to work so the vecter a should be of doubles.
     }
     //s is the no. of pieces of length x we can cut 
     return s>=k;    //if s is atleast k then we can cut out k pieces of x length
