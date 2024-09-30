@@ -101,7 +101,12 @@ So for K=3 ans is 5 , which means that 5 is the 3rd or kth non perfect sq no. st
 
 Task is to find the kth non perfect sq number (This is a standard Number theory Q , found a solution is gfg)
 
-Method 1 :- N(minimum No. of bulbs)=⌊k+√k+0.5⌋  (Normal Method)
+Method 1 :- N(minimum No. of bulbs)=⌊k+√k+0.5⌋  (Normal Method)  
+     N Bulbs  a[n]    2 3 5 6 7 8 10 11 12 13 14 15 17
+     K         (n)    1 2 3 4 5 6 7  8  9  10 11 12 13
+
+               We can come upto the constant time formula for the nth number in this sequence, by inspection. 
+               nth term = n+⌊√n+0.5⌋ (Standard Resutl)
 
 Method 2 :- Binary Search Method
   
@@ -111,15 +116,15 @@ Method 2 :- Binary Search Method
           what if (x+1) is sq number.  (Search Space is only monotonic if we ommit the square no. so we sqaure nos first but i think even if we dont remove then also probablity wise chances of encountering sq nos are less hence even without removing sq nos the thing work)
 
 Search space:        2 3 5 6 7 8 10 11 12 13
- n-⌊√n⌋      :-       1 2 3 4 5 6 7  8  9  10        k=8
+ x-⌊√x⌋      :-       1 2 3 4 5 6 7  8  9  10        k=8
                      0 0 0 0 0 1 1  1   1  1      (Monotonic Search space)
                                ^ (we are looking for the first one)
 
                       
                               
  
-        n-⌊√n⌋:- how this formula arrives , on succesful overvation that ⌊√n⌋  is the no. of square nos before n (1 is  included as a sq no.) so substracting ⌊√n⌋
-                from n gives position of n among the nonperfect sq nos.
+        x-⌊√x⌋:- how this formula arrives , on succesful overvation that ⌊√x⌋  is the no. of square nos before x (1 is  included as a sq no.) so substracting ⌊√x⌋
+                from x gives position of x among the nonperfect sq nos.
 
                 so non perfect sq pos of x (x is the k1 th non perfect sq nos) , k1 = x-⌊√x⌋  and if k1 is atleast k i.e. then x is a good number.
 
@@ -144,7 +149,7 @@ int good(int x){
     int k1 = x-int32_t(sqrtl(x));                  //x is the k1-th non sq no. , is x is a sq no. k1 becomes zero
     return k1>=k;
 }
-
+//Method 2 Binary Search
 void solve() {
     cin>>k;
 
@@ -166,6 +171,26 @@ void solve() {
 
 }
 
+
+//Method 1 Direct arithematic constant time method
+
+int findNthNonSquare(int n)
+{
+    // conversion from int(long long) to  double(long double) is
+    // necessary in order to preserve decimal 
+    // places after square root.
+    double x = (double)n;
+ 
+    // calculating the result
+    double ans = x + floor(0.5 + sqrt(x));
+ 
+    return (int)ans;
+}
+void solve2(){
+    int k; cin>>k;
+    int ans=findNthNonSquare(k);
+    cout<<ans<<endl;
+}
 
 
 /*-------------------------------------------------------------------------------------------------*/
