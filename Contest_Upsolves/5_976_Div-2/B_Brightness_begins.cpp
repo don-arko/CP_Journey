@@ -174,6 +174,8 @@ void solve() {
 
 //Method 1 Direct arithematic constant time method
 
+
+//learn the type conversation implementation from here.
 int findNthNonSquare(int n)
 {
     // conversion from int(long long) to  double(long double) is
