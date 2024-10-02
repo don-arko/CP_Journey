@@ -1,0 +1,23 @@
+                                                                    ~ UPPER BOUND and LOWER BOUND FUNCTIONS ~
+                                                                    ------------------------------------------
+The very basis of these functions is the Two Problems Closest from left and Closest from right which is the background implementation of these functions.( Binary Search Edu section ).
+
+Bookish Def                                                                       My def(for understanding):- (difference is instead of pointer iterator is returned in the functions)
+                                                                            |
+Lower Bound of x :- it returns the iterator to the smallest element >=x.    | ~  it returns the R pointer of CLOSEST FROM RIGHT.(>=x)
+Upper Bound of x :- it returns the iterator to the smallest element >x      | ~  it returns the R Pointer of CLOSEST FROM LEFT. (>x)       we could do it-- to shift to L from R if that is required.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CONTAINER SORTED IN INCREASING ORDER                                   
+Lower Bound of x :- it returns the iterator to the smallest element >=x.    | ~  it returns the R pointer of CLOSEST FROM RIGHT.(>=x)
+Upper Bound of x :- it returns the iterator to the smallest element >x      | ~  it returns the R Pointer of CLOSEST FROM LEFT. (>x)       we could do it-- to shift to L from R if that is required.
+
+
+CONTAINER SORTED IN DECREASING ORDER
+Lower Bound of x :- it returns the iterator to the greatest element <=x.    | ~  it returns the L pointer of CLOSEST FROM LEFT. (<=x)
+Upper Bound of x :- it returns the iterator to the smallest element <x      | ~  it returns the L Pointer of CLOSEST FROM RIGHT. (<x)       we could do it++ to shift to R from L if that is required.  (as L and R are always Neighbours)                                                                    
+
+So using the upperbound ans lowerbound functions we can always get L,R of both closest from right or closest from left either by doing it--(to get L pointers we we have R pointers (actuallly iterators))
+or buy sorting the array in decreasing order.(to directly get the L pointers instead of the usual R pointers(actually iterators))
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
