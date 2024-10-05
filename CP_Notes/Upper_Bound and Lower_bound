@@ -21,3 +21,7 @@ Upper Bound of x :- it returns the iterator to the smallest element <x      | ~ 
 So using the upperbound ans lowerbound functions we can always get L,R of both closest from right or closest from left either by doing it--(to get L pointers we we have R pointers (actuallly iterators))
 or buy sorting the array in decreasing order.(to directly get the L pointers instead of the usual R pointers(actually iterators))
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Few Points:-
+-l and r are always neighbours at the and so if there are multiple x in the array and a[l]<=x and a[r]>x then l points to the last x 
+-similarly for a[l]<x and a[r]>=x and for multiple x , r would point to the first x 
