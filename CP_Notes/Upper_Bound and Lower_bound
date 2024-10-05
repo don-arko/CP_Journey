@@ -15,7 +15,7 @@ Upper Bound of x :- it returns the iterator to the smallest element >x      | ~ 
 
 
 CONTAINER SORTED IN DECREASING ORDER
-Lower Bound of x :- it returns the iterator to the greatest element <=x.    | ~  it returns the L pointer of CLOSEST FROM LEFT. (<=x)
+Lower Bound of x :- it returns the iterator to the greatest element <=x.    | ~  it returns the L pointer of CLOSEST FROM LEFT. (<=x)      
 Upper Bound of x :- it returns the iterator to the smallest element <x      | ~  it returns the L Pointer of CLOSEST FROM RIGHT. (<x)       we could do it++ to shift to R from L if that is required.  (as L and R are always Neighbours)                                                                    
 
 So using the upperbound ans lowerbound functions we can always get L,R of both closest from right or closest from left either by doing it--(to get L pointers we we have R pointers (actuallly iterators))
@@ -25,8 +25,21 @@ or buy sorting the array in decreasing order.(to directly get the L pointers ins
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Syntax of UpperBound and LowerBound
 
+-INCREASING ORDER
+
 auto it=lower_bound(a.begin(),a.end(),target);
 auto it=upper_bound(a.begin(),a.end(),target);
+
+-DECREASING ORDER
+
+auto it=lower_bound(a.begin(),a.end(),target,greater<int>());
+auto it=upper_bound(a.begin(),a.end(),target,greater<int>());  greater<int>() tells the functions that we are dealing with decreasingly sorted array . 
+
+Functioning as defined above.
+Visualisation from right
+But indexing never changes it is from left starting with 0.
+
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
