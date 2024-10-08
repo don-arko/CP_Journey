@@ -1,0 +1,17 @@
+ CONCEPT :R-L means we are counting the nos in the range [L+1,R]  ....(i)
+(Proof visualise two lines in nos lines starting from 0 to right to L and R respectively and imagine what the distance R-L gives, L becomes new 0 and L+1 is first point or we start count 1 from L+1)
+
+Inference of above concept:- when we know the inclusive(both ends) range [L,R] we can count the nos of elements between them by R-L+1
+                             actually R-(L-1) why L-1 so that we start counting 1 from (L-1)+1=L which is to be included in counting      ...(ii)
+
+Eg1 : If we want to count the nos in the range [L,R) we can either 
+      i) make it [L,R--] to get the inclusive range and use the standard formula R-L+1, or       |R-L+1|    where R=R-1 ~ |R-L|
+      ii) using the fundamental concept and its inference , inclusive range is [L,R-1] and 
+          then to count the nos from L to R-1 is (R-1)-(L-1)=R-L (why L-1, refer (ii))            |R-L|
+
+      Both are the manifestation of each other in the first formula R is actually modified as R-- and the R of the second formula is the real R .
+
+      So  to summarise : 
+-No . of elements in the range [L,R) :  R--; R-L+1;  (using the standard result when we have inclusive range)
+-No . of elements in the range [L,R) : R-L;          (use the standard result only R-L+1 but just substitute R=R-1 and get this modified formula)
+
