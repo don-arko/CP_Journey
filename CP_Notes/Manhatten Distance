@@ -1,0 +1,19 @@
+CONCEPT: Manhatten Distance 
+
+Euclidean Distance between 2 point P1(x1,y1) and P2(x2,y2) 
+ - is given by dist(P1-P2) = ((x2-x1)^2 + (y2-y1)^2)^0.5
+
+
+Manhatten Distance between 2 point P1(x1,y1) and P2(x2,y2) 
+ - is given by dist(P1-P2) = |x2-x1|+|y2-y1|
+
+
+
+ Physical Significance of these distances : Imagine a Grid
+ -Euclidean Distance : is the shortest distance between P1 and P2 i.e. it is the distance of the line joining P1 and P2
+ -Manhatten Distance : is the shortest distance between P1 and P2 when  horizontal and vertical movement is only allowed . 
+                        |x2-x1| represents the total horizontal distance to be travelled whereas |y2-y1| represents the 
+total vertical distance to be travelled to reach P2 from P1 using only horizontal and vertical movement.
+
+
+So whenever a scenario is given ; where movements are only horizontal and vertical we should ignore euclidean distance and only consider manhatten distance 
