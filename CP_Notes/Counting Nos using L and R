@@ -15,3 +15,14 @@ Eg1 : If we want to count the nos in the range [L,R) we can either
 -No . of elements in the range [L,R) :  R--; R-L+1;  (using the standard result when we have inclusive range)
 -No . of elements in the range [L,R) : R-L;          (use the standard result only R-L+1 but just substitute R=R-1 and get this modified formula)
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+- USECASE :- when the nos between L-R are continous we can apply these formulae
+
+- L, R are usually indices or iterators (think of them as indices so as for easy visualisation of iterator arthematic, iterators are also contiguous  )
+
+
+--------DON'T THINK ABOUT THESE -------ITERATORS ARE INDEXES-------------------------------
+
+-if     it->a[0] = 200      each element of the container is taking 4 ints , but we do not need to think about that 
+      it+1->a[1] = 204      iterators automatically add +n*4 or -n*4 when we do it++/it+n, it-- /it-n 
+                             think of iterators as just indices (easy for visualisation and apllication of formulae related to L and R)
