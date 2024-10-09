@@ -108,6 +108,9 @@ because if we can reach in x days we can always delay the procedure by staying a
 (if wind is moving the ship towards the destination Engine power shall be applied in opposite dir 
 to stay in the same position ))
 
+FFFFFFFFFFFTTTTTTTTTTTTTT  we are looking for the first true
+------------------------>k
+
 
 Try to dry run the first sample test case and visualise it , then it will be easy to understand.The distance travelled by the ship is a resultant/superposition
 of two forces (i) wind (not in our hands) and (ii) its engine(in out hands ). We can kinda work with them individually (~consider action of single forces at a time then add them to 
@@ -121,20 +124,82 @@ So we need to check if the remaining manhatten distance after the wind effect is
  */
 
 const int N = 200005;
-pair<int,int> st,fi;
 int n;
+pair<int,int> st,fi;  // starting point coordinate and final destination point coordinate
 string s;
 
+string mv="UDLR";
+int dx[]={0,0,-1,1};
+int dy[]={1,-1,0,0};
 
-string mv= "UDLR";
-int dx={0,0,-1,1};
-int dy={1,-1,0,0};
+pair<int,int> d[N]; //creates a array of pairs with all pairs initially set to (0,0)
+//d[i] = 
+//this array stores the change in coordinates after the ith day ; i<=n; starting from (0,0)
+//d[0]=(0,0);
+//d[1]=(h,k); coordinate where the wind takes the ship after first day
+//bascially d[i]= Δd[i] after ith day ; i<=n;
+//(x,y) after ith day=(x0 + d[i].first ,yo+d[i].second)   ; i<=n
 
-void solve() {
-    cin >> st.x >> st.y >> fi.x >> fi.y;
-    cin >> n >> s;
+//(x,y) after ith day=(x0 + d[i%n].first + {i/n}*d[n].first , yo+d[i%n].second + {i/n}*d[n].second)   ; i>n
+                        // (Extra Days)    (complete cycle=d[n]*no. of cycles(i/n))
+
+//size of the string is n but size of d is N >> n so we can easily yse d[n] which is the change in displacement after 1 complete cycle n days 
+//displacement in x due to wind after i = 2n+3 days = x0 + 2*d[n]+d[3]
+//agar n days (one complete cycle of the string) me displacement in x = -4 hain i.e. d[n]=-4, then for i=2n change in displacement shall be 2*d[n];
+
+bool good(int x){
+    int cycles=x/n;
+    int extra_days=x%n;
+    int x3=st.first+d[extra_days].first+cycles*d[n].first;
+    int y3=st.second+d[extra_days].second+cycles*d[n].second;
+
+    int dist= abs(fi.first-x3)+abs(fi.second-y3);//remaining manhatten distance that needs to be covered by engine power and engine can cover 1 manhatten distance in 1 day.
+    //in x days engine can cover atmost x manhatten distance 
+    if(dist<=x){
+        return true;
+    }
+    else{
+        return false;
+    }
 
 }
+void solve() {
+    
+    cin>>st.first>>st.second>>fi.first>>fi.second;
+    cin>>n>>s;
+    //bug(n);
+    
+    //now calculating the change in displacement uptil n days
+    for(int i=0;i<n;i++){
+        int idx=-1; //
+        for(int j=0;j<4;j++){ //for each of the char of the string trying to find if it is U or D ..
+            if(mv[j]==s[i]){
+                idx=j; //now dx[j] gives the change  in x due to U/D/L/R like that
+            }
+        }
+        //assert(idx!=-1); //the program will terminate if this condition is ever false actually that should not happen if the data is correct.
+        d[i+1]=make_pair(d[i].first+dx[idx],d[i].second+dy[idx]); //d[0]=(0,0) if s[0]=U then d[1] becomes (0,1) like that finally d is filled uptil d[n] giving change in coordinates afer n days
+    }
+    
+    
+    int l=0;
+    int r=1e18; //(?) bad me figure out krna abhi dimaag ka dahi ho rakha hian
+    while(r-l>1){
+        int m=(l+r)/2;
+        if(good(m)){
+            r=m;
+        }
+        else{
+            l=m;
+        }
+    }
+
+    //(?)
+    if(r>5e17) r=-1;
+    cout<<r<<endl;
+    
+}
+
 
 
 
