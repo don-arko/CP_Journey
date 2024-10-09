@@ -1,0 +1,52 @@
+
+Read  Bit Manipulation from CP Agorithms (excellent)
+
+0) 100 ~ 00000100  (we can do this to fill all the bits of the type we are using  with leading zeroes )
+1) Bits are indexed in 0 Based Indexing from right in left . Eg  bk.....b2b1b0  where each bit place has a value associated = 2^k.
+2)  2^k : {
+            - has the kth bit set from right (0 based indexing) , (kth bitn in 0 based indexing  has value 2^k) or,
+            - has the (k+1)th bit set from right (1 based indeixing ), (kth bit  in 1 based indexing has value 2^(k+1-1)=2^k)
+    }
+    2^k-1 : {
+            - has all the bits  are set from 0th bit to k-1 th bit (i.e. first k bits are set (fundamental counting is always 1 based),
+              while in contrast first k bits of 2^k is off and k+1 th bit is set)
+    }
+
+
+3) AND (&) FUNDAMENTAL CONCEPT:
+    
+  _ & 1 = 1st Bit (***)
+
+  eg  0 & 1 = 0
+      1 & 1 = 1
+
+4) Other AND Use-Case and Concepts:-
+
+    a} (x&1) = {
+                  1, if x is odd
+                  0 , if x is even
+        }
+
+        Proof:- 
+
+        Using the fundamental concept
+
+        Facts: If x is even its last bit is off eg 1 : 0001  eg 15 : 1111 (last bit set)
+               If x is odd its last bit is on.  eg 2 : 0010  eg 16 :10000 (last bit off)
+
+        so just referring the fundamental concept of AND 
+        x&1  makes the last bit of the ans dependent on the last bit of x and all other bits of the ans is zero . So the ans is 1 if last bit of x is set (when x is odd)
+              else the ans is 0 if last bit of x is off  (x is even)
+        eg  x = 15 =  1111
+                &1 =  0001
+              -------------
+                      0001 -> 1 -> x is odd
+        eg x = 16 = 10000
+               &1 = 00001
+              -------------
+                    00000->0-> x is even
+      b} More Generally (innfering from a) x is divisible by 2^k exacly when x & (2^k-1) = 0.
+
+        Proof:-
+
+    
