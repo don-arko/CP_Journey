@@ -1,5 +1,5 @@
 
-Read  Bit Manipulation from CP Agorithms (excellent)
+Read  Bit Manipulation from CP Agorithms (excellent this mostly derived from there only)
 
 0) 100 ~ 00000100  (we can do this to fill all the bits of the type we are using  with leading zeroes )
 1) Bits are indexed in 0 Based Indexing from right in left . So any text saying ith bit (it is in 0 based system)  Eg  bk.....b2b1b0  where each bit place has a value associated = 2^k.
@@ -15,31 +15,57 @@ Read  Bit Manipulation from CP Agorithms (excellent)
 
 3)  FUNDAMENTAL CONCEPTS REGARDING EACH OPERATOR:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-         AND(&) : - bitwise AND compares each bit of its first operand with the corresponding bit of its second operand. If both bits are 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
+         AND(&) : - bitwise AND compares each bit of its first operand with the corresponding bit of its second operand. 
+                    If both bits are 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
 
-  _ & 1 = 1st Bit (***) {fetches the first bit}
+ a)  _ & 1 = 1st Bit (***) {fetches the first bit}
 
   eg  0 & 1 = 0
       1 & 1 = 1
+b)  _ & 0 = 0 (**) {Clearing the bit}
      
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-          OR (|) : - bitwise inclusive OR operator compares each bit of its first operand with the corresponding bit of its second operand. If one of the two bits is 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
+          OR (|) : - bitwise inclusive OR operator compares each bit of its first operand with the corresponding bit of its second operand. 
+                     If one of the two bits is 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
 
-    _ | 0 = 1st Bit (***) {fetces the first bit}
+  a) _ | 0 = 1st Bit (***) {fetces the first bit}
 
   eg  0 | 0 = 0
       1 | 0 = 1
 
+  b) _ | 1 = 1 (**)   {Setting the bit}
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-          XOR (^) : - exclusive OR (XOR) operator compares each bit of its first operand with the corresponding bit of its second operand. If one bit is 0 and the other bit is 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
+          XOR (^) : - exclusive OR (XOR) operator compares each bit of its first operand with the corresponding bit of its second operand. 
+                      If one bit is 0 and the other bit is 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
 
      _ ^ 1 = ~1st Bit {Flips the first Bit}
 
-  eg  0 ^ 1 = 1
-      1 & 1 = 0
+  eg  0 ^ 1 = ~0=1
+      1 & 1 = ~1=0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      RIGHT SHIFT (>>) : - Shifts a number to the right by removing the last few binary digits of the number. 
+                           Each shift by one represents an integer division by 2, so a right shift by k represents an integer division by  2^k .
+       x>>k = ⌊x/2^k⌋
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      LEFT SHIFT (<<) : - Shifts a number to left by appending zero digits. In similar fashion to a right shift by  k , a left shift by k  represents
+                          a multiplication by 2^k .
+       x>>k = x*2^k
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------4) AND Use-Case and Concepts:-
+4) USEFUL TRICKS:_
 
-4) AND Use-Case and Concepts:-
+    a}Set/flip/clear a bit:-
+            - (1 << x) is a number with only the  x-th bit (0 based indexing) set, while  ~(1 << x )  is a number with all bits set except the x-th bit.
+                        EXPLAINATION : {1 is a no. whose 0th bit is set so 1<<1 , jump =1 is a no. whose 1st bit is set (0 based)} 
+
+            i) n | (1<<x) : sets the xth bit in the no. n . {Explaination : (1<<x) has only xth bit set and then using fundamental concept of OR}
+           ii) n ^ (1<<x) : flips the xth bit in the no. n. {Explaination : (1<<x) has only xth bit set and then using fundamental concept of XOR }
+          iii) n & ~(1<<x) : clear the x th bit in the no. n. {Explaination : ~(1<<x) has only xth bit of and then using fundamental concept of AND}
+
+
+
+
+
 
     a} (x&1) = {
                   1, if x is odd
@@ -48,7 +74,7 @@ Read  Bit Manipulation from CP Agorithms (excellent)
 
         Proof:- 
 
-        Using the fundamental concept
+        Using the fundamental concepts of AND
 
         Facts: If x is even its last bit is off eg 1 : 0001  eg 15 : 1111 (last bit set)
                If x is odd its last bit is on.  eg 2 : 0010  eg 16 :10000 (last bit off)
