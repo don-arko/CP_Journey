@@ -49,4 +49,7 @@ FEW POINTS/TECHNIQUES
 - similarly for a[l]<x and a[r]>=x and for multiple x , r would point to the first x 
 - to get 0 based indexes from the iterator we can substract a.begin from the iterator 
   eg   int idx=it-a.begin();  if it->a[i] and this gives i 
+- we almost treat iterators are indices , remember iterator arthematic which automatically handles the size of the each element , so for easy visualisation we can take element size as 1, so if it_l -> a[l] and it_r-> a[r] then , 
+it_r-it_L+1 gives the no. of elements in the range [a[l],a[r]]
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------
