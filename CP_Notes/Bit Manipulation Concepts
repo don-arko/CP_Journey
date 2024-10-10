@@ -273,7 +273,13 @@ b)  _ & 0 = 0 (**) {Clearing the bit}
             
 
 
+11) Additional TRICKS:
+            -n&(n+1): clears all trailing ones:  00110|111  -> 00110|000
+            -n|(n+1): sets the last cleard bit:  001101|0|1 -> 001101|1|1
+            - (n&-n): extracts the last set bit: 00110|1|00 -> 00000|1|00
 
+FOR MORE TRICKS REFER THE BOOK HACKER's DELIGHT
+            
             
 
             
