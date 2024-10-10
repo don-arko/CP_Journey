@@ -108,10 +108,33 @@ b)  _ & 0 = 0 (**) {Clearing the bit}
        More generally, n is divisible by 2^k exacly when n&(2^k-1) = 0 
 
 
-     We can calculate  $2^{k}$  by left shifting 1 by  $k$  positions. The trick works, because  $2^k - 1$  is a number that consists of exactly  $k$  ones. And a number that is divisible by  
-$2^k$  must have zero digits in those places.
-      b} More Generally (innfering from a) x is divisible by 2^k exacly when x & (2^k-1) = 0.
+     We can calculate  2^k by left shifting 1 by  k  positions. The trick works, because  2^k -1  is a number that consists of exactly k ones .
+     And a number that is divisible by  2^k  must have zero digits in those places. 
 
-        Proof:-
+     {Explaination : so when n is &ed with 2^k-1(last k bits 1 and ahead from k+1 bits all are leading 0s) it fetches the k bits of n 
+     (where 2^k is 1), clears all bits ahead of k bits of n in result (where 2^k is 0) so the resulting no. is zero when all fetch bits of n are 0 
+     or last k bits of n are zero  which also means n is divisible by 2^ k}
+     
+
+     FACTS LEARNED FROM CN : When n is divided by 2^k , its last k bits gives the remainder or if its last k bits are zero n is evenly divisible by 2^k
+            
+            WHY THE LAST K BITS OF A NUMBER DIVISIBLE BY 2^k is 0: OR Last K bits is the Remainder When a number is divided by 2^k
+
+            Vague Proof
+            A number is divisible by 2^𝑘 if it is a multiple of 2^k . This means that it can be written as 𝑁 = 𝑚*(2^k) , where m is an integer.
+            And when m=1 the number is  2^k where its k+1 th place (1 Based indexing) is 1 followed by k zeroes, next value of N is 2*2^k or 2^k+1 which has k+1
+            0s at the end, next value of m=3 which also has no less k 0s at the end.
+
+            If we add any other non zero binary digit in any of these k positions , the number will no longer be divisible bu 2^k , because we would 
+            be adding values less that 2^k( tabhi toh last k bits zero nei hain) that would create a remainder.
+            
+     IMPLEMENTATION:
+//here k is kth bit in 0 based indexing and counting wise last k bits are 0/1(this counting is always 1 based)
+
+bool isDivisibleByPowerOf2(int n, int k) {
+    int powerOf2 = 1 << k;
+    return (n & (powerOf2 - 1)) == 0;
+}
+
 
     
