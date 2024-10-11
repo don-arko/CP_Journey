@@ -69,6 +69,16 @@ It turns out that the strategy above is also the optimal strategy for the origin
 So we can simulate that process to get the answer.
 
 Time complexity for each test case:  O(nlogn)
+
+My Explaination :- 
+Srsly just ignore the floor operation .(The entire focus on minimising the fraction getting turncated is useless)
+
+The main idea is simple , the final ans is of the form ((((a1+a2)/2+a3)/2+a4)/2+a5)/2 . If we split it into seperate terms it shall look like, 
+a1/2^4 + a2/2^4 + a2/2^3 + a3/2^2 + a4/2^1 . Think of 1/16  as 0.065 and similarly other numbers as numberator Numbers. So the ans is of the form
+f1*a1 + f2*a2 + f3*a3... such that f1<f2<f3<f4... and sum of them is constant = 1(1/16+1/8..+1/2=1). So after seeing this from the ans seems greedy, 
+we should pick greedily pick and place all the elements of the array in ascending order since the coefficients are in that order so max value coeff is multipied by the max term
+and hence the ans is maximised.
+
 */
 
 
