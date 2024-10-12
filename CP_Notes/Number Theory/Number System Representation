@@ -1,0 +1,21 @@
+
+//https://codeforces.com/contest/2020/problem/A  (Classic question on Number system represtation)
+
+
+Number Thoery
+
+The minimum no. of operations required to substract k^x from n and to reduce n to zero is the sum of digits of n in base k number system.
+
+n : a number in any system.
+n%k:- fetches the last digit in base k system.
+n=n/k: deletes the last digit in base k system.
+
+For Example :n=5(decimal system) say k=2 then n(=5)=101 in base k=2 system.
+n%k=5%2=1 (last digit of 5 in binary rep)
+n=n/k = 5/2=2(=10 in binary,last digit =1 deleted)
+
+n%k=2%2=0 (second last digit of 5 in binary system)
+n/k=2/2=1(=1 in binary system second last digit of 5 deleted)
+
+n%k=1 (first digit of 5 in binary system)
+n/k=1/2=0 (all digits of 5 in binary system is deleted)
