@@ -64,7 +64,7 @@ b)  _ & 0 = 0 (**) {Clearing the bit}
 
 
 
-5) CHECK IS A BIT IS SET OR NOT
+5) CHECK IF A BIT IS SET OR NOT
 
             The value of the x-th bit can be checked by shifting the number x positions to the right, so that the 
             x-th bit is at the unit place, after which we can extract it by performing a bitwise & with 1. (fundamental property of AND)
