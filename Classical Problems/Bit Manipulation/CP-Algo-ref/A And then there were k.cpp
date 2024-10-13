@@ -92,7 +92,7 @@ void solve() {
 
     //calculating the last set bit of n
 
-    int last=0; //bit indices starts from 0th index hence last initial value=0, this value will for sure get updated to the last set bit index unless n=0
+    int last=-1; //till now no bit is set. This value for sure gets updated to a valid bit index if n!=0
     for(int i=0;i<30;i++){      //0-29 are the bit indices, we dont need to go till 30 because 2^30>10^9 (which is n max)
         if((n>>i)&1){   //&1 check is the unit place bit or 0-th bit if it is set or not  
                         //i-th bit can be checked by shifting the number n ,i positisions to the right so that i-th bit is at unit position (0 index)
