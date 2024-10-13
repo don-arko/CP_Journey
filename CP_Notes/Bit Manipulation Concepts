@@ -303,6 +303,57 @@ SOME PROPERTIES (Ref:- TLE-2 Bit manipulation 1)
 - A & (A-1) is 0 if A is a power of 2(except when A=0)
 
 
+           12)  Bit MASKING (Generating all subsets) (Ref:- TLE-2 Bit Manipulation 1)
+A Bitmsak is a sequence of N bits that encodes a subset, where the element is taken if a bit is set, and not taken if a bit is unset.
+Eg: 10110 would mean indices 1,2,4 are taken , while 0.3 are not.
+By generating all bitmasks of some size, we can easily generate all subsets of an arry.
+This way we can use iteration instead of recursioin to generate subsets.
+
+IMPLEMENTATION : //Bitmasking- Brute Force Code
+
+n=s.size();
+for (int mask = 0; mask < (1 << n); mask++) {            //first loop iterates among all possible masks
+      for (int i = 0; i < n; i++)                         //this loop iterates among all the bits of the masks , i-th bit set ~ ith element of the array is picked
+            if ((mask >> i) & 1)                         //mask>>i shifts the i-th bit(0 based) to unit place(0th index) 
+                   cout << a[i] << " ";                  //i-th bit(0 based)->0th bit(unit place), Jumps= i
+                                                         //N&1 fetches the last bit of the N as 1 or 0 as the entire Number.
+            cout << endl; //newline after printing each subset
+}
+
+            EXPLAINATION:
+ Suppose A={2,5,7};             //   we need to generate all subsets of this set A
+  indices-> 0 1 2 
+
+size of the set A = n 
+So, there are n elements , lets consider n slots/ each representing the numner of ways in which we can pick the ith element from the array
+
+            2 * 2 * 2   =2^3 ways/subsets         Why 2 each :- because one way is we pick the ith element n other one is we don't
+            _   _   _      Let 0 be the representaion for a[i] not picked. 
+                               1 be the represemtation for a[i] being picked.
+
+            So, we have 3 slots/bits , the no of ways we could fill these 3 bits with 0 and 1  
+            starting with
+
+            Bin   Dec
+            000 - 1            bitmask=0 to
+            ...   
+            ...
+            111 - 7 = 2^3-1    bitmask=2^n-1
+            
+
+
+            Each of these binary arrangmenets corresponds to  one of the subsets of A.
+
+            So the first for loop iterates among bitmask=0->bitmask=2^n-1 (total of 2^n ways/subsets)
+
+            The second for loop iterates among the bits of each bitmask. If the 0-th bit is set it implies a[0] is there in this arrangement of the subset.
+            To check if the i-th bit is set or not , we do n>>i, which brings the i-th bit(0 based) to 0-th bit(unit place) , jump=i and then N&1 gives 1 or 0 depending on the unit place bit of N.
+
+
+
+
+
+            
 
             
 
