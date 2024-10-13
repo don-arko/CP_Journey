@@ -4,7 +4,7 @@
 
 Number Thoery
 
-The minimum no. of operations required to substract k^x from n and to reduce n to zero is the sum of digits of n in base k number system.
+1.) The minimum no. of operations required to substract k^x from n and to reduce n to zero is the sum of digits of n in base k number system.
 
 n : a number in any system.
 n%k:- fetches the last digit in base k system.
@@ -19,3 +19,7 @@ n/k=2/2=1(=1 in binary system second last digit of 5 deleted)
 
 n%k=1 (first digit of 5 in binary system)
 n/k=1/2=0 (all digits of 5 in binary system is deleted)
+
+2.) Suppose n=121(10) i.e. k=10 , then n*k , adds a zero at the end i.e. n*k=121=1210
+    Similary for n = 100(2) = 4(10) and k=2 , then n*k adds a zero at the end n*k=8(10) = 1000 (zero added in the end)
+    CONCEPT IS when a base k number is multiplied by k , then a 0 is inserted at the unit place where 0 is the 1st digit of any number system.
