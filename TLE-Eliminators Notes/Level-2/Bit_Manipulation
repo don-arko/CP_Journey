@@ -1,1 +1,61 @@
-a
+
+  Level-2 Bit- Manipulation Slide - 1
+
+Use Case of Bit manipulation
+  -Problems may or may not directly involve bit manipulation.
+  -Some problems use bitwise operators in the problem statement itself, where some problems might use bit manipulation indirectly.
+  -For Example , if the problem involves power of 2, it might be relate to binary. Similarly powers of other numbers might be in there own base.
+
+How to approach Bit Manipulation Problems?
+  -"When solving a bitwise problem, think bitwise " my mentor 2020
+
+  -When solving a problem that uses addition , multiplication, etc, we use decimal, which is the appropriate base for us 
+  -Similarly when solving a problem that uses a bitwise operator, we need to use binary , which is the appropriate base
+
+  -Think in proper base or else we wont be able to notice the underlaying patterns that exits.
+
+Bit MASKING (Generating all subsets) 
+
+
+ -A Bitmsak is a sequence of N bits that encodes a subset, where the element is taken if a bit is set, and not taken if a bit is unset.
+ 
+-Eg: 10110 would mean indices 1,2,4 are taken , while 0.3 are not.
+ 
+ -By generating all bitmasks of some size, we can easily generate all subsets of an arry.
+
+ -This way we can use iteration instead of recursioin to generate subsets.
+
+IMPLEMENTATION : //Bitmasking- Brute Force Code
+
+n=s.size();
+for (int mask = 0; mask < (1 << n); mask++) {            //first loop iterates among all possible masks
+      for (int i = 0; i < n; i++)                         //this loop iterates among all the bits of the masks , i-th bit set ~ ith element of the array is picked
+            if ((mask >> i) & 1)                         //mask>>i shifts the i-th bit(0 based) to unit place(0th index) 
+                   cout << a[i] << " ";                  //i-th bit(0 based)->0th bit(unit place), Jumps= i
+                                                         //N&1 fetches the last bit of the N as 1 or 0 as the entire Number.
+            cout << endl; //newline after printing each subset
+}
+
+Types of Problems:
+
+-Bit Independent Problems:
+  Can solve for each bit seperately. The solution for a bit 'x' will not depend on the solution of a bit 'y'.
+-Bit-Dependent Problems:
+  Cannot solve for each bit seperately. All the bits are intercconected and cannot be treated as independent.
+
+
+
+
+SOME PROPERTIES 
+
+- OR/AND/XOR are associative and commutative.
+- A ^ 0 = A
+- A ^ A = 0
+- If A ^ B = C , then A ^ C = B
+- A ^ B ^ B = A
+- A & B <= min(A,B)
+- A | B >= max(A,B)
+- (A|B) + (A&B) = A+B
+- (A & 1) is 1 if A is odd, else 0
+- A & (A-1) is 0 if A is a power of 2(except when A=0)
+
