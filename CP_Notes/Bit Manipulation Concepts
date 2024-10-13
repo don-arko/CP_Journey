@@ -2,7 +2,7 @@
 Read  Bit Manipulation from CP Agorithms (excellent, this is mostly derived from there only)
 
 0) 100 ~ 00000100  (we can do this to fill all the bits of the type we are using  with leading zeroes )
-1) Bits are indexed in 0 Based Indexing from right in left . So any text saying ith bit (it is in 0 based system)  Eg  bk.....b2b1b0  where each bit place has a value associated = 2^k.
+1) Bits are indexed in 0 Based Indexing from right in left so are the value of the places are 2^index(0 based) . So any text saying ith bit (it is in 0 based system)  Eg  bk.....b2b1b0  where each bit place has a value associated = 2^k.
 2)  2^k : {
             - has the kth bit set from right (0 based indexing) , (kth bitn in 0 based indexing  has value 2^k) or,
             - has the (k+1)th bit set from right (1 based indeixing ), (kth bit  in 1 based indexing has value 2^(k+1-1)=2^k)
