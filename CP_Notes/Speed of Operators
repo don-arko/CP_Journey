@@ -3,3 +3,8 @@ All the operators are O(1) but
 Fast                     Slow                 Very Slow               Further Slow
 ------------------------------------------------------------------------------------>
 (|,^,~,&)               (-,+)                   (*)                      (/,%)
+
+
+
+Since modulo operator is very slow , if we need k%N then it is a good practice to make N as const int this is faster than doing modulo with a random valued N.
+For the same reason in the template we have Const int N=1e7+9
