@@ -44,6 +44,12 @@ b)  _ & 0 = 0 (**) {Clearing the bit}
   eg  0 ^ 1 = ~0=1
       1 & 1 = ~1=0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      NOT (~) : Flips every bit of the given number. Mind every no. has leading zeroes in their binary rep to fill the type 32 or 64 bits so those bits (sign bit included) are also flipped.
+
+      ~x = -(x+1)
+      eg ~10=-11
+            
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
       RIGHT SHIFT (>>) : - Shifts a number to the right by removing the last few binary digits of the number. 
                            Each shift by one represents an integer division by 2, so a right shift by k represents an integer division by  2^k .
        x>>k = ⌊x/2^k⌋
