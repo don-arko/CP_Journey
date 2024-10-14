@@ -56,49 +56,13 @@ void __f (const char* names, Arg1&& arg1, Args&&... args)
 
 
 
-/*
-Editorial
 
-This problem with small constraints can be solved in the following way. Let's bake cookies one by one until it is possible. For every new cookie let's calculate val — how many grams of the magic powder we need to bake it. For this let's brute all ingredients and for the ingredient number i if a[i] ≤ b[i] let's make b[i] = b[i] - a[i], else let's make b[i] = 0 and val = val + a[i] - b[i]. When we bruted all ingredients if val > k than we can't bake more cookies. Else let's make k = k - val and go to bake new cookie.
-
-Brute-Force Idea -
-
-We iterate over all the incredient (one iteration with magic powder req for that iteration = val (say);val<= magic powder available means we can bake one cookie) 
-
-*/
 const int N = 200005;
+//int a[N][N];
+vector<pair<int,int>> v;
 
-
-void solve() {
-    int n,k;cin>>n>>k;
-    int req[n], have[n];
-    for(int i=0;i<n;i++) cin>>req[i];
-    for(int i=0;i<n;i++) cin>>have[i];
-    int ans=0;
-    while(k>0){
-        int val=0; //calculates the grams of magic powder req for baking of one cookie (=summation req for each ingredient)
-        for(int i=0;i<n;i++){
-            if(req[i]<=have[i]){
-                have[i]-=req[i];
-            }
-            else{   //req > have
-                val+=req[i]-have[i];
-            }
-        }
-        bug(val);
-
-        if(val<=k){
-            ans++;
-            k-=val;
-        }
-        else{
-            cout<<ans<<endl;
-            return;
-        }
-
-    }
-
-
+void solve(pair<int,int> p) {
+    vector<vector<int>()>
 }
 
 
@@ -122,9 +86,19 @@ int32_t main()
 /*-------------------------------------------------------------------------------------------------*/
 
 
-    int t = 1;
-    // cin >> t;
-    while (t--) solve();
+    int t;cin>>t;
+    v.resize(t);
+    for(int i=0;i<t;i++){
+        cin>>v[i].first;
+    }
+    for(int i=0;i<t;i++){
+        cin>>v[i].second;
+    }
+    print1(v);
+    int count=0;
+    while(t--){
+        solve(v[count++]);
+    }
 
     cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
 
