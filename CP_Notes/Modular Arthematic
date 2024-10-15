@@ -1,0 +1,5 @@
+//modular Arithematic: 
+m*k <= a[i] <= (m+1)*k ; d1=a[i]-mk and d2 = (m+1)*k -a[i]
+- a[i]%k gives d1: distance of a[i] from the largest multiple of k    ;  m*k <= a[i]
+- k-a[i]%k gives d2:  distance of a[i] from the smallest multiple of k ; a[i] <= (m+1)*k
+- min(a[i]%k,k-a[i]%k) gives the smallest distance between a[i] to any multiple of k 
