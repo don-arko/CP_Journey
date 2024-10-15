@@ -1,5 +1,10 @@
 //modular Arithematic: 
 m*k <= a[i] <= (m+1)*k ; d1=a[i]-mk and d2 = (m+1)*k -a[i]
-- a[i]%k gives d1: distance of a[i] from the largest multiple of k    ;  m*k <= a[i]
-- k-a[i]%k gives d2:  distance of a[i] from the smallest multiple of k ; a[i] <= (m+1)*k
-- min(a[i]%k,k-a[i]%k) gives the smallest distance between a[i] to any multiple of k 
+- d1=a[i]%k gives d1: distance of a[i] from the largest multiple of k    ;  m*k <= a[i]
+- d2=(k-a[i]%k)%k  gives d2:  distance of a[i] from the smallest multiple of k ; a[i] <= (m+1)*k
+
+Explaination of ()%k in d2:
+a[i]%k belongs to [0,k-1]  {Think of clock} 
+so k - a[i]%k belongs to [1,k] so when d2=0 our formula d2= k - a[i]%k gives k as the distance hence we should again do this %k to get the accurate distance which is 0
+
+- min(d1,d2) gives the smallest distance between a[i] to any multiple of k 
