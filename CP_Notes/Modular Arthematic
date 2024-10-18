@@ -9,3 +9,8 @@ so k - a[i]%k belongs to [1,k] so when d2=0 our formula d2= k - a[i]%k gives k a
 should again do this %k to get the accurate distance which is 0. So (k-a[i]%k)%k belongs to [0,k-1]
 
 - min(d1,d2) gives the smallest distance between a[i] to any multiple of k 
+
+
+// Edge Case Handling : 
+  as in the above output was [1,k] but our req was [0,k-1] was an extra % was req
+  similarly sometimes %-> output as [0,k] but we may req output in the reange [1,k] then we would req an extra if to handle the case when n%k==0 
