@@ -1,0 +1,29 @@
+If we have an Array of size n : then the number of subarrays (has to be contiguous) within it  is n(n+1)/2
+
+Explaination : 
+
+Suppose we have an array A= {1,2,3} with n=3
+                             _ _ _
+                             ___
+                               ___
+                             ______                              
+                             
+Then                         size=1       size=2       size=3
+  Total No. of subarrays       3 (n)   +  2 (n-1)  +   1 (n-2)      = 6(n*(n+1)/2) (basically suumation 1 to n)  :  
+More generally if size of subarray = k we have n-(k-1) such subarrays or n-k+1 subarrays of size k . 
+
+VISUALISATION OF THE RESULT (n-k+1) subrrays of size k are there.
+      -Take a slot of size = k (as subarrays are contiguous and its length is k) from the starting .  
+      -Now as we move the slot each time we get a new sub-array of size k.
+      -Initially the slot starts from begining where it ends at the k-th element , Now how many times we could slide this slot till we reach n, the no. of times
+      we could do so is the no. of subarrays of size k that exists in the array of size n, initially the end of the slot is at k and finally it will be at n so no. 
+      of times the slot could moved is n-k+1 (considering both the cases : when the slot end is n and at k).
+
+
+If we have an array or segment of lenth l , then the no. of subarrays of size atleast k is (l-k+1)(l-k+2)/2 also equal to (l-k+2)C(l-k)
+
+Explaination : (Combinatorial Explaination not yet figure out how)
+The formula n*(n+1)/2 considers size atleast 1 . So what we are doing is will club k elements together . Say we club first k elements(just for understanding the new total no. elements) then total no. of elements now are 
+elements in the range [k-l] = l-k+1 . Clubbing-> treating k elements as 1 elements ensuring k contigous elements are always picked.
+So now no. of subarrays  (size atleast k) = n(n+1)/2 put n=l-k+1 and we get the above result
+  
