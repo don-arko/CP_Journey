@@ -1,6 +1,23 @@
+//Pair
+pair<int,int> d[N]; //creates a array of pairs of ints of size N  with all pairs initially set to (0,0)
 
 
-pair<int,int> d[N]; //creates a array of pairs of ints  with all pairs initially set to (0,0)
+//Map
+
+/*
+-Usage of maps is like arrays think of a[i] where i is the key and a[i] is the value 
+-Most common usecase is frequency counting cause maps are flexible in term of range of freqency to be discrete where if we use arrays to count frequency then range of frequency has to be almost continuous
+*/
+
+//-printing maps through iterators
+map<int,int> m;
+auto it=m.begin();
+while(it!=m.end()){
+    cout<<(*it).first<<" "<<(*it).second<<endl;   //usage of parenthesis is very imp cause dot operator has more precedance hence without () it will cause an error
+    //or
+    cout<<it->first<<" "<<it-<seconnd<<endl;
+    it++;
+}
 
 
 
