@@ -9,7 +9,8 @@ pair<int,int> d[N]; //creates a array of pairs of ints of size N  with all pairs
 -Most common usecase is frequency counting cause maps are flexible in term of range of indices.. it could be discrete
 where if we use arrays to count frequency then range of indices has to be almost continuous or else there is always wastage of space and it the constraint are high this wastage may not allow us to use arrays at all or limit errors may be raised.
 -[anything]++ creates the key "anything" if not present then increase frequency from 0 to 1 or else just updates the frequency if anything is present in the map.
-
+- if using the map and frequency we want to count the no. of distinct element using the size of the map then, the case when frequency becomes zero (by doing m[anyting]--), has to be handled manually(have to erase ethe element manually or else map supports -ve frequencyes also )
+so that m.size() always gives the number of distinct elements 
 */
 
 //FEATURES OF MAP
