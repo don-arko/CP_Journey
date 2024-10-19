@@ -6,7 +6,8 @@ pair<int,int> d[N]; //creates a array of pairs of ints of size N  with all pairs
 
 /*
 -Usage of maps is like arrays think of a[i] where i is the key and a[i] is the value 
--Most common usecase is frequency counting cause maps are flexible in term of range of freqency to be discrete where if we use arrays to count frequency then range of frequency has to be almost continuous
+-Most common usecase is frequency counting cause maps are flexible in term of range of indices.. it could be discrete
+where if we use arrays to count frequency then range of indices has to be almost continuous or else there is always wastage of space and it the constraint are high this wastage may not allow us to use arrays at all or limit errors may be raised.
 */
 
 //-printing maps through iterators
