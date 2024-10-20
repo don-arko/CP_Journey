@@ -10,3 +10,13 @@ for (){
 endloops;
   cout<<ans;
 
+
+//continue : 
+
+while(condition){
+    if(condition){
+        continue;  //this would skip the remaining statements for this iteration. bases on the condition.
+    }
+    //statements 
+}
+
