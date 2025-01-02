@@ -9,7 +9,7 @@ Suppose we have an array A= {1,2,3} with n=3
                              ______                              
                              
 Then                         size=1       size=2       size=3
-  Total No. of subarrays       3 (n)   +  2 (n-1)  +   1 (n-2)      = 6(n*(n+1)/2) (basically suumation 1 to n)  :  
+  Total No. of subarrays     3 (~n)   +  2 (~ n-1) +  1 (~ n-2)      = 6 ~ (n*(n+1)/2) (basically suumation 1 to n)  :  
 More generally if size of subarray = k we have n-(k-1) such subarrays or n-k+1 subarrays of size k . 
 
 VISUALISATION OF THE RESULT (n-k+1) subrrays of size k are there.
